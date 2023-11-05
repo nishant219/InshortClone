@@ -6,7 +6,7 @@ mongoose.set('strictQuery', true);
 
 const connection = async (username, password) => {
   try {
-    const URL = `mongodb+srv://testdb:pass%40123@test.znmfw.mongodb.net/test?retryWrites=true&w=majority`;
+    const URL = process.env.DB_URL;
     await mongoose.connect(
       URL,
       { useNewUrlParser: true },
