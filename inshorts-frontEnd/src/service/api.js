@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:7000';
+//const URL = 'http://localhost:7000';
+const URL = 'https://inshort-server-ej86.onrender.com';
 
 
 export const getNews = async (page, size = 5) => {
@@ -10,4 +11,6 @@ export const getNews = async (page, size = 5) => {
         console.log('error while calling getNews API');
     }
 }
+
+
 
