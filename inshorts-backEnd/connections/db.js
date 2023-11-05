@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+
+mongoose.set('strictQuery', true);
 
 const connection = async (username, password) => {
   try {
-    const URL = `mongodb+srv://testdb:pass%40123@test.znmfw.mongodb.net/test?retryWrites=true&w=majority`;
+    const URL=process.env.DB_URL;
     await mongoose.connect(
       URL,
       { useNewUrlParser: true },
-      { usecreateIndex: true },
-      { useUnifiedTopology: true },
-      { useFindAndModify: false }
+      { useUnifiedTopology: true }
     );
-    console.log("Database connected successfully");
+    console.log("__ Database connected successfully __");
   } catch (error) {
     console.log("Error while connecting with the database: ", error);
   }

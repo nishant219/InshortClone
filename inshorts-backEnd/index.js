@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
 import bodyParser from "body-parser";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 //components
 import connection from "./connections/db.js";
